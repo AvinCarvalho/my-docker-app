@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DevOps Profile - Lato Theme</title>
+<title>DevOps Profile - Light Blue UI</title>
 
 <!-- LATO FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
@@ -16,35 +16,26 @@
   }
 
   :root {
-    --bg: #050b1a;
-    --card: rgba(10, 25, 60, 0.65);
-    --text: #eaf2ff;
-    --muted: #a9b7d0;
-    --primary: #3b82f6;
-    --accent: #60a5fa;
-    --border: rgba(255,255,255,0.08);
-  }
-
-  body.light {
-    --bg: #f4f8ff;
-    --card: rgba(255,255,255,0.85);
+    --bg: #eaf4ff;
+    --card: #ffffff;
     --text: #0f172a;
     --muted: #475569;
-    --primary: #2563eb;
-    --accent: #3b82f6;
-    --border: rgba(0,0,0,0.08);
+    --primary: #3b82f6;
+    --accent: #60a5fa;
+    --border: rgba(15, 23, 42, 0.08);
   }
 
   body {
     font-family: "Lato", sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(59,130,246,0.15), transparent 40%),
+      radial-gradient(circle at bottom right, rgba(96,165,250,0.15), transparent 40%),
+      var(--bg);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 30px;
-    transition: 0.4s ease;
   }
 
   .card {
@@ -52,10 +43,9 @@
     max-width: 980px;
     background: var(--card);
     border: 1px solid var(--border);
-    backdrop-filter: blur(18px);
-    border-radius: 28px;
+    border-radius: 26px;
     padding: 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    box-shadow: 0 20px 50px rgba(59,130,246,0.15);
     position: relative;
     overflow: hidden;
   }
@@ -64,10 +54,10 @@
     position: absolute;
     top: -120px;
     right: -120px;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, var(--accent), transparent 70%);
-    filter: blur(30px);
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+    filter: blur(20px);
   }
 
   .top {
@@ -87,100 +77,84 @@
   .avatar {
     width: 120px;
     height: 120px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 22px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 38px;
     font-weight: 900;
     color: white;
-    box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+    box-shadow: 0 12px 30px rgba(59,130,246,0.3);
   }
 
   h1 {
     font-size: 40px;
     font-weight: 900;
+    color: var(--text);
   }
 
   h2 {
-    color: var(--accent);
     font-size: 18px;
-    margin-top: 6px;
     font-weight: 700;
+    color: var(--primary);
+    margin-top: 5px;
   }
 
   p {
-    color: var(--muted);
     margin-top: 10px;
+    color: var(--muted);
     max-width: 600px;
     line-height: 1.7;
-    font-weight: 400;
-  }
-
-  .toggle {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: 0.3s;
-  }
-
-  .toggle:hover {
-    transform: scale(1.05);
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 18px;
     margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
   }
 
   .box {
-    background: rgba(255,255,255,0.05);
+    background: #f8fbff;
     border: 1px solid var(--border);
-    padding: 20px;
     border-radius: 18px;
-    transition: 0.3s;
-  }
-
-  body.light .box {
-    background: rgba(0,0,0,0.03);
+    padding: 20px;
+    transition: 0.3s ease;
   }
 
   .box:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(59,130,246,0.15);
   }
 
   .box h3 {
     font-size: 13px;
-    color: var(--muted);
     text-transform: uppercase;
+    color: var(--muted);
     font-weight: 700;
+    letter-spacing: 0.5px;
   }
 
   .box p {
     margin-top: 8px;
-    color: var(--text);
+    font-size: 16px;
     font-weight: 700;
+    color: var(--text);
   }
 
   .skills {
+    margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 25px;
   }
 
   .skill {
     padding: 10px 14px;
     border-radius: 12px;
-    background: rgba(59,130,246,0.15);
+    background: rgba(59,130,246,0.12);
     border: 1px solid rgba(59,130,246,0.25);
     color: var(--text);
     font-weight: 700;
@@ -190,6 +164,7 @@
   .skill:hover {
     background: var(--primary);
     color: white;
+    transform: scale(1.05);
   }
 
   .footer {
@@ -204,13 +179,24 @@
   }
 
   .btn {
-    background: var(--primary);
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
     border: none;
     color: white;
     padding: 12px 18px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: 900;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(59,130,246,0.25);
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    .profile { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
@@ -227,13 +213,11 @@
         <h1>Michael Johnson</h1>
         <h2>Senior DevOps Engineer</h2>
         <p>
-          DevOps engineer specializing in AWS, Kubernetes, Terraform,
-          CI/CD automation, and scalable cloud infrastructure.
+          DevOps engineer specializing in cloud infrastructure, CI/CD pipelines,
+          Kubernetes, Terraform, and scalable automation systems.
         </p>
       </div>
     </div>
-
-    <button class="toggle" onclick="toggleTheme()">Toggle Theme</button>
   </div>
 
   <div class="grid">
@@ -270,16 +254,10 @@
   </div>
 
   <div class="footer">
-    <span>Blue DevOps Portfolio • Lato Font</span>
+    <span>Light Blue DevOps Portfolio</span>
     <button class="btn">Contact</button>
   </div>
 </div>
-
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle("light");
-  }
-</script>
 
 </body>
 </html>
