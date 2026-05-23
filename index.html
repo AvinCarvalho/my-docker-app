@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gen Z DevOps Profile</title>
+<title>DevOps Gen Z UI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
 
@@ -15,13 +15,18 @@
   }
 
   :root {
-    --bg1: #0b1020;
-    --bg2: #111a33;
-    --neon1: #00f5ff;
-    --neon2: #a855f7;
-    --neon3: #facc15;
+    --bg1: #0b1220;
+    --bg2: #0f1b33;
+
+    --card: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.10);
+
     --text: #eaf2ff;
-    --muted: #a9b3c9;
+    --muted: #a9b4c7;
+
+    --blue: #3b82f6;
+    --cyan: #06b6d4;
+    --yellow: #fbbf24;
   }
 
   body {
@@ -32,72 +37,62 @@
     justify-content: center;
     padding: 30px;
     color: var(--text);
-    background: radial-gradient(circle at top left, #1a2a6c33, transparent 40%),
-                radial-gradient(circle at bottom right, #b21f1f33, transparent 40%),
-                linear-gradient(135deg, var(--bg1), var(--bg2));
-    overflow: hidden;
-  }
 
-  /* floating neon blobs */
-  .blob {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    filter: blur(80px);
-    opacity: 0.5;
-    z-index: 0;
-  }
-
-  .blob.one {
-    background: var(--neon1);
-    top: -100px;
-    left: -100px;
-  }
-
-  .blob.two {
-    background: var(--neon2);
-    bottom: -120px;
-    right: -120px;
+    background:
+      radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(6,182,212,0.15), transparent 45%),
+      linear-gradient(135deg, var(--bg1), var(--bg2));
   }
 
   .card {
     width: 100%;
     max-width: 980px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--card);
+    border: 1px solid var(--border);
     backdrop-filter: blur(20px);
     border-radius: 28px;
     padding: 40px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.45);
     position: relative;
-    z-index: 2;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+
+  .glow {
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+    filter: blur(30px);
   }
 
   .top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
   }
 
   .profile {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
   }
 
   .avatar {
     width: 120px;
     height: 120px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, var(--neon1), var(--neon2), var(--neon3));
+    border-radius: 26px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan), var(--yellow));
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 40px;
     font-weight: 900;
-    color: #000;
-    box-shadow: 0 0 25px rgba(0,245,255,0.4);
+    color: #0b1220;
+    box-shadow: 0 15px 35px rgba(59,130,246,0.25);
   }
 
   h1 {
@@ -109,8 +104,8 @@
   h2 {
     font-size: 18px;
     margin-top: 6px;
-    color: var(--neon1);
     font-weight: 700;
+    color: var(--cyan);
   }
 
   p {
@@ -123,12 +118,11 @@
   .tag {
     padding: 10px 16px;
     border-radius: 999px;
-    background: rgba(0,245,255,0.1);
-    border: 1px solid rgba(0,245,255,0.3);
-    color: var(--neon1);
+    background: rgba(251,191,36,0.12);
+    border: 1px solid rgba(251,191,36,0.35);
+    color: var(--yellow);
     font-weight: 700;
     font-size: 13px;
-    height: fit-content;
   }
 
   .grid {
@@ -139,24 +133,24 @@
   }
 
   .box {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
     border-radius: 18px;
     padding: 20px;
-    transition: 0.3s;
+    transition: 0.3s ease;
   }
 
   .box:hover {
-    transform: translateY(-6px) scale(1.02);
-    border-color: var(--neon1);
-    box-shadow: 0 0 25px rgba(0,245,255,0.15);
+    transform: translateY(-6px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 25px rgba(6,182,212,0.15);
   }
 
   .box h3 {
     font-size: 12px;
     text-transform: uppercase;
-    color: var(--muted);
     letter-spacing: 1px;
+    color: var(--muted);
   }
 
   .box p {
@@ -176,16 +170,16 @@
     padding: 10px 14px;
     border-radius: 12px;
     font-weight: 700;
-    background: rgba(168,85,247,0.15);
-    border: 1px solid rgba(168,85,247,0.3);
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.25);
     transition: 0.3s;
     cursor: pointer;
   }
 
   .skill:hover {
-    transform: scale(1.1);
-    background: var(--neon2);
-    color: #000;
+    background: var(--cyan);
+    color: #001018;
+    transform: scale(1.08);
   }
 
   .footer {
@@ -194,25 +188,25 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid var(--border);
     padding-top: 20px;
     color: var(--muted);
   }
 
   .btn {
-    background: linear-gradient(135deg, var(--neon1), var(--neon2));
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
     border: none;
     padding: 12px 18px;
     border-radius: 12px;
     font-weight: 900;
     cursor: pointer;
-    color: #000;
+    color: #001018;
     transition: 0.3s;
   }
 
   .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(0,245,255,0.3);
+    box-shadow: 0 12px 25px rgba(59,130,246,0.25);
   }
 
   @media (max-width: 600px) {
@@ -224,10 +218,8 @@
 
 <body>
 
-<div class="blob one"></div>
-<div class="blob two"></div>
-
 <div class="card">
+  <div class="glow"></div>
 
   <div class="top">
     <div class="profile">
@@ -236,13 +228,13 @@
         <h1>Michael Johnson</h1>
         <h2>DevOps Engineer</h2>
         <p>
-          Building scalable cloud systems, automating everything, and shipping
-          production-grade infrastructure with Kubernetes, AWS & Terraform.
+          Building scalable cloud systems, CI/CD pipelines, Kubernetes clusters,
+          and automating infrastructure with modern DevOps practices.
         </p>
       </div>
     </div>
 
-    <div class="tag">⚡ Available for Freelance</div>
+    <div class="tag">Available for Work</div>
   </div>
 
   <div class="grid">
@@ -279,7 +271,7 @@
   </div>
 
   <div class="footer">
-    <span>Gen Z DevOps UI • Neon Glass Design</span>
+    <span>Modern DevOps Gen Z UI</span>
     <button class="btn">Contact Me</button>
   </div>
 
