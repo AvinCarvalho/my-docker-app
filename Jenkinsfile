@@ -2,9 +2,11 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/AvinCarvalho/my-docker-app.git'
+                git branch: 'main',
+                url: 'https://github.com/AvinCarvalho/my-docker-app.git'
             }
         }
 
@@ -23,7 +25,7 @@ pipeline {
 
         stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 3000:80 --name myapp myapp:latest'
+                sh 'docker run -d --restart always -p 3000:80 --name myapp myapp:latest'
             }
         }
     }
@@ -32,6 +34,7 @@ pipeline {
         success {
             echo '🔥 Deployment Successful!'
         }
+
         failure {
             echo '❌ Deployment Failed!'
         }
