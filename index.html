@@ -1,257 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DevOps Profile - UK Style</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Engineer and DevOps Engineer with 4 Years of experience</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+    .profile-card {
+      max-width: 700px;
+      background: white;
+      padding: 30px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
 
-  :root {
-    --bg: #f6f9fc;
-    --card: #ffffff;
-    --text: #0f172a;
-    --muted: #5b6b82;
+    h2 {
+      color: #7f8c8d;
+      margin-top: 0;
+      font-weight: normal;
+    }
 
-    --primary: #1d4ed8;   /* UK corporate blue */
-    --accent: #3b82f6;
+    p {
+      line-height: 1.7;
+      color: #444;
+    }
 
-    --border: #e6edf5;
-  }
+    .info {
+      margin-top: 20px;
+    }
 
-  body {
-    font-family: "Lato", sans-serif;
-    background: var(--bg);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 920px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 38px;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  }
-
-  .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .profile {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-  }
-
-  .avatar {
-    width: 110px;
-    height: 110px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    font-weight: 900;
-    color: white;
-  }
-
-  h1 {
-    font-size: 34px;
-    font-weight: 900;
-    color: var(--text);
-  }
-
-  h2 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--primary);
-    margin-top: 4px;
-  }
-
-  p {
-    margin-top: 8px;
-    color: var(--muted);
-    max-width: 620px;
-    line-height: 1.7;
-    font-size: 14.5px;
-  }
-
-  .badge {
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: #e8f0ff;
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 13px;
-    border: 1px solid #d6e4ff;
-  }
-
-  .grid {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-  }
-
-  .box {
-    background: #fafcff;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px;
-    transition: 0.2s ease;
-  }
-
-  .box:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-  }
-
-  .box h3 {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
-
-  .box p {
-    margin-top: 6px;
-    font-weight: 800;
-    color: var(--text);
-  }
-
-  .skills {
-    margin-top: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .skill {
-    padding: 8px 12px;
-    border-radius: 10px;
-    background: #eef4ff;
-    border: 1px solid #dbe7ff;
-    font-weight: 700;
-    font-size: 13px;
-    color: var(--primary);
-    transition: 0.2s;
-  }
-
-  .skill:hover {
-    background: var(--primary);
-    color: white;
-  }
-
-  .footer {
-    margin-top: 28px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  .btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
-    font-weight: 800;
-    cursor: pointer;
-  }
-
-  .btn:hover {
-    background: var(--accent);
-  }
-
-  @media (max-width: 600px) {
-    h1 { font-size: 26px; }
-    .profile { flex-direction: column; align-items: flex-start; }
-  }
-</style>
+    .info strong {
+      color: #2c3e50;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="card">
+  <div class="profile-card">
+    <h1>Alex Johnson</h1>
+    <h2>Software Engineer</h2>
 
-  <div class="top">
-    <div class="profile">
-      <div class="avatar">MJ</div>
-      <div>
-        <h1>Michael Johnson</h1>
-        <h2>Senior DevOps Engineer</h2>
-        <p>
-          DevOps Engineer specialising in cloud infrastructure, CI/CD pipelines,
-          Kubernetes, Terraform, and scalable automation systems.
-        </p>
-      </div>
-    </div>
+    <p>
+      Passionate software engineer with over 6 years of experience in
+      developing scalable web applications, backend systems, and cloud-based
+      solutions. Skilled in modern programming languages, clean architecture,
+      and agile development practices.
+    </p>
 
-    <div class="badge">Available for Hire</div>
-  </div>
-
-  <div class="grid">
-    <div class="box">
-      <h3>Email</h3>
-      <p>michael.j@example.com</p>
-    </div>
-
-    <div class="box">
-      <h3>Phone</h3>
-      <p>+44 7700 900123</p>
-    </div>
-
-    <div class="box">
-      <h3>Location</h3>
-      <p>London, UK</p>
-    </div>
-
-    <div class="box">
-      <h3>Experience</h3>
-      <p>7+ Years</p>
+    <div class="info">
+      <p><strong>Email:</strong> alex.johnson@example.com</p>
+      <p><strong>Phone:</strong> +1 234 567 890</p>
+      <p><strong>Location:</strong> San Francisco, USA</p>
+      <p><strong>Skills:</strong> JavaScript, Python, React, Node.js, AWS</p>
+      <p><strong>Experience:</strong> 6 Years</p>
     </div>
   </div>
-
-  <div class="skills">
-    <div class="skill">AWS</div>
-    <div class="skill">Docker</div>
-    <div class="skill">Kubernetes</div>
-    <div class="skill">Terraform</div>
-    <div class="skill">Jenkins</div>
-    <div class="skill">Linux</div>
-    <div class="skill">CI/CD</div>
-    <div class="skill">Grafana</div>
-  </div>
-
-  <div class="footer">
-    <span>UK Corporate DevOps Profile</span>
-    <button class="btn">Contact</button>
-  </div>
-
-</div>
 
 </body>
 </html>
