@@ -26,17 +26,11 @@ pipeline {
                     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
                     sh 'docker push $DOCKERHUB_USER/$IMAGE_NAME:latest'
                 }
-            }
-        }
-        stage('Stop & Remove Old Container') {
+         }}
+      
+        stage('Deploy to k3s') {
             steps {
-                sh 'docker stop myapp || true'
-                sh 'docker rm myapp || true'
-            }
-        }
-        stage('Run New Container') {
-            steps {
-                sh 'docker run -d --restart always -p 4000:80 --name myapp $DOCKERHUB_USER/$IMAGE_NAME:latest'
+                sh 'sudo kubectl rollout restart deployment eeshoapp'
             }
         }
     }
