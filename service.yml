@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eeshoapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eeshoapp
+  template:
+    metadata:
+      labels:
+        app: eeshoapp
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: eesho-app
+          image: eesho/myapp:latest
+          ports:
+            - containerPort: 80
