@@ -1,21 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   name: eeshoapp
 spec:
-  replicas: 2
+  type: NodePort
   selector:
-    matchLabels:
-      app: eeshoapp
-  template:
-    metadata:
-      labels:
-        app: eeshoapp
-    spec:
-      imagePullSecrets:
-        - name: dockerhub-secret
-      containers:
-        - name: eesho-app
-          image: eesho/myapp:latest
-          ports:
-            - containerPort: 80
+    app: eeshoapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
