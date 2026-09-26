@@ -1,0 +1,21 @@
+name: Build and Deploy taskly-web
+
+on:
+  push:
+    branches: [taskly-web]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Build Docker image
+        run: docker build -t eesho/taskly-web:latest .
+
+      - name: Push to Docker Hub
+        run: docker push eesho/taskly-web:latest
